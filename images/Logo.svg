@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90px" height="20px" viewBox="0 0 90 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>4C91439F-0074-4EC0-8402-DDEDAE7C8830</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M10,17.982 C5.941,17.982 2.606,14.95 2.096,11.028 L6,11.036 L6,11.029 L8.417,8.592 C11.085,13.167 10.403,11.997 11.699,14.219 L14.907,11 L17.925,11 C17.414,15 14.059,17.982 10,17.982 M10,1.964 C14.085,1.964 17.458,5 17.936,9 L14,9 L14,9.048 L12.04,11.043 L9.793,7.177 L9.799,7.172 L8.754,5.38 L7.342,6.795 L7.351,6.789 L5.122,9 L2.064,9 C2.542,5 5.915,1.964 10,1.964 M10,0 C4.477,0 0,4.478 0,10 C0,15.523 4.477,20 10,20 C15.523,20 20,15.523 20,10 C20,4.478 15.523,0 10,0" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-24.000000, -20.000000)" id="Top-Bar">
+            <g>
+                <g id="Logo" transform="translate(24.000000, 15.000000)">
+                    <g id="Icon/20px/stats-[#1192]" transform="translate(0.000000, 5.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="stats-[#1192]" fill-opacity="0" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <g id="⚙️Atoms/Colour/Grey-Darker/1---100%" mask="url(#mask-2)" fill="#939393" fill-rule="evenodd">
+                            <rect id="Colour" x="0" y="0" width="20" height="20"></rect>
+                        </g>
+                    </g>
+                    <text id="Musica" font-family="Lato-Medium, Lato" font-size="18" font-weight="400" line-spacing="28" fill="#272727">
+                        <tspan x="34" y="18">Musica</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
