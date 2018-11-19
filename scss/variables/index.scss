@@ -1,19 +1,17 @@
+// colours
 $white: #fff;
 $black: #000;
+$grey-dark: #3e4c4e;
+$grey-medium: #959595;
+$grey-medium-dark: #696969;
+$grey-light: #f5f6f9;
+$grey-light-text: #c0c0c0;
+$grey-lighter: #e9ebf0;
+$grey-soft: #f6f6f6;
+$blue-ultra: #061eb5;
 
+// breakpoints
 $small-breakpoint: 576px;
 $medium-breakpoint: 768px;
 $large-breakpoint: 992px;
 $xlarge-breakpoint: 1200px;
-
-// Small devices (landscape phones, 576px and up)
-//@media (min-width: 576px) { ... }
-
-// Medium devices (tablets, 768px and up)
-//@media (min-width: 768px) { ... }
-
-// Large devices (desktops, 992px and up)
-//@media (min-width: 992px) { ... }
-
-// Extra large devices (large desktops, 1200px and up)
-//@media (min-width: 1200px) { ... }

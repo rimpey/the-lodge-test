@@ -3,6 +3,9 @@
 html,
 body {
   height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 14px;
 }
 
 body {
@@ -14,7 +17,7 @@ body {
   transition: transform .3s ease-in-out;
 
   &.nav-open {
-    transform: translateX(-400px);
+    transform: translateX(-300px);
   }
 }
 
@@ -22,10 +25,10 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px 50px;
+  height: 60px;
+  box-sizing: border-box;
 
   nav {
-    //display: none;
-
     position: fixed;
     right: 0;
     top: 0;
@@ -36,26 +39,51 @@ header {
     padding-top: 60px;
     transform: translateX(400px);
 
-      a {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 100;
-        color: $black;
-        text-decoration: none;
-        margin-right: 20px;
+    &:before {
+      content: 'Menu';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 400px;
+      height: 60px;
+      padding-left: 25px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      background: $grey-soft;
+      color: $grey-medium-dark;
+      font-weight: 400;
+    }
 
-        &:last-child {
-          margin-right: 0;
-        }
-      }
+    a {
+      color: $grey-medium;
+      text-decoration: none;
+      margin-right: 20px;
+      padding: 25px 0 25px 25px;
+      border-bottom: 1px solid $grey-light;
 
       @media (min-width: $small-breakpoint) {
-        position: static;
-        display: block;
         padding: 0;
-        transform: none;
-        width: auto;
+        border-bottom: none;
+      }
+
+      &:last-child {
+        margin-right: 0;
       }
     }
+
+    @media (min-width: $small-breakpoint) {
+      position: static;
+      display: block;
+      padding: 0;
+      transform: none;
+      width: auto;
+
+      &:before {
+        content: none;
+      }
+    }
+  }
 
   .hamburger {
 
@@ -66,6 +94,189 @@ header {
 }
 
 main {
-  background: url('/images/image.jpg') top center;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 45px;
+
+  section {
+    &.search {
+      background: url('/images/image.jpg') top center no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      max-height: 100%;
+      transition: max-height .3s ease-in-out;
+
+      .list-albums & {
+        max-height: 40%;
+      }
+
+      .search-container {
+        text-align: center;
+        width: 75%;
+
+        @media (min-width: $medium-breakpoint) {
+          width: 60%;
+        }
+
+        @media (min-width: $large-breakpoint) {
+          width: 35%;
+        }
+
+        .title {
+          font-weight: 400;
+          font-size: 20px;
+          color: $grey-dark;
+          padding-bottom: 25px;
+        }
+        .search-bar {
+          position: relative;
+          margin-bottom: 10px;
+
+          i {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            color: $grey-light-text;
+            font-size: 18px;
+          }
+
+          input {
+            width: 100%;
+            outline: none;
+            padding: 10px;
+            border: 1px solid $grey-lighter;
+            border-radius: 4px;
+            box-sizing: border-box;
+
+            &::placeholder {
+              color: $grey-light-text;
+              font-size: 14px;
+              font-weight: 100;
+            }
+          }
+        }
+
+        button {
+          width: 100%;
+          padding: 10px;
+          border: none;
+          background-color: $blue-ultra;
+          border-radius: 4px;
+          color: $white;
+          font-size: 16px;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    &.albums {
+      flex: 1;
+      max-height: 0;
+      transition: max-height .3s ease-in-out;
+      position: relative;
+      overflow-y: scroll;
+
+      .spinner {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: white;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+
+        img {
+          width: 50px;
+        }
+
+        .list-albums-loading & {
+          opacity: 1;
+        }
+      }
+
+      .list-albums & {
+        max-height: 60%;
+      }
+
+      .albums-container {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+
+        .list-albums-loaded & {
+          display: flex;
+        }
+
+        @media (min-width: $medium-breakpoint) {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+        .album-item {
+          display: flex;
+          justify-content: center;
+          margin: 5px 5px 15px 5px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid $grey-lighter;
+
+          .album-image-wrapper {
+            position: absolute;
+            height: 100%;
+            left: 0;
+            top: 0;
+
+            img {
+              height: 100%;
+            }
+          }
+
+          .album-data-wrapper {
+            text-align: left;
+            position: relative;
+            padding: 10px 10px 10px 145px;
+
+            .album-name {
+              font-weight: 400;
+              padding: 4px 0;
+              font-size: 13px;
+            }
+            .album-song-title {
+              font-size: 11px;
+              color: $grey-light-text;
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: $grey-light-text;
+  background-color: $white;
+  font-size: 11px;
+  padding: 20px 0;
+  height: 45px;
+  box-sizing: border-box;
 }
